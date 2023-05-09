@@ -147,6 +147,10 @@ MONGO_DBNAME :  <link to your MongoDB database>
 
 These are the same that are in the env file.
 
+8.Enable Automatic Deployment on the deploy tab.
+
+9.The app will be deployed and ready to run. Click "Open App" to view the app.
+
 
 
 
