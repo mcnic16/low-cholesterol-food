@@ -111,6 +111,47 @@ validators , pep8 and python testing
 
 
 # Deployment
+1. Set up environment variables.
+Create .env file in the root directory.
+On the top of the file, add import os to set the environment variables in the operating system
+Set the connection to your MongoDB database(MONGO_URI) and a SECRET_KEY with the following syntax: os.environ.setdefault("IP", "0.0.0.0")
+os.environ.setdefault("PORT", "5000") -
+os.environ.setdefault("SECRET_KEY", "secret_key")
+os.environ.setdefault("MONGO_URI", "")
+os.environ.setdefault("MONGO_DBNAME", "mongo-dbname")
+
+2. Install all requirements from the requirements.txt file putting this command into your terminal:
+pip3 freeze --local > requirements.txt
+
+3. Create a Procfile, which is what Heroku looks for to know which file runs the app, and how to
+run it by using the following command in the terminal:
+echo web: python run.py > Procfile
+
+4.git add, git commmit and git push files.
+
+5.Log into Herouku and create a new app, assign a name and select a region.
+
+6.From the Heroku dashboard link the new Heroku app to your GitHub repository:
+Click on Deploy followed by Github.
+Make sure your GitHub profile is displayed, then add your repository name then click 'Search'.
+Once it finds your repo, click to connect to this app.
+
+7.Click on the 'Settings' tab for your app, and then click on 'Reveal Config Vars', where
+we can securely tell Heroku which variables are required. Set the following vars:
+IP : 0.0.0.0
+PORT : 5000
+SECRET_KEY : <your secret key>
+MONGO_URI : 
+MONGO_DBNAME :  <link to your MongoDB database>
+
+
+These are the same that are in the env file.
+
+
+
+
+
+
 
 
 # Credits
