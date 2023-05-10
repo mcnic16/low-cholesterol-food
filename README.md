@@ -141,7 +141,7 @@ we can securely tell Heroku which variables are required. Set the following vars
 IP : 0.0.0.0
 PORT : 5000
 SECRET_KEY : <your secret key>
-MONGO_URI : 
+MONGO_URI : <link to your MongoDB database: myfirst cluster > connect > drivers>
 MONGO_DBNAME :  <link to your MongoDB database>
 
 
