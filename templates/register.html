@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<!----------------Registration Form------------------->
+<div class="container">
+    <div class="row">
+        <form class="col s12 m8 offset-m2" id="reg-form" method="POST" action="{{ url_for('register') }}">
+          <!----------------Username------------------->
+            <div class="row">
+            <div class="input-field col s12">
+                <i class="fas fa-user-plus prefix cynan text-darken-4"></i>
+              <input id="username" type="text" class="validate" required>
+              <label for="username">Userame</label>
+            </div>
+          </div>
+          <!----------------Password------------------->
+          <div class="row">
+            <div class="input-field col s12">
+                <i class="fas fa-user-lock prefix text-darken-4"></i>
+              <input id="password" type="password" class="validate" minlength="6" required>
+              <label for="password">Password</label>
+            </div>
+          </div>
+          <!----------------Submit Button------------------->
+            <div class="input-field col s6">
+              <button class="btn btn-large btn-register waves-effect cyan waves-light" type="submit" name="action">Register
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+
+
+{% endblock %}
