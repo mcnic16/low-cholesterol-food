@@ -74,10 +74,10 @@ Bootsrap
 
 
 ## Colour Scheme
-
+The colour for the navbar is Cyan.
 
 ## Typography
-
+The font used is Playfair Display, serif
 
 ## Icons
 

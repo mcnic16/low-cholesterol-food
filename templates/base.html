@@ -9,13 +9,35 @@
     crossorigin="anonymous" type="text/css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
     type="text/css">
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" type="text/css">
   {% block styles %}
   {% endblock %}
   <title>Low Cholesterol Food</title>
 </head>
 
-
+<!---------------Navbar-->
+  <nav class="nav-extended text-shadow #b2ebf2 #26c6da cyan lighten-1">
+  <div class="nav-wrapper">
+    <a href="#!" class="brand-logo">Low Cholesterol Food</a>
+    <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+    <ul class="right hide-on-med-and-down menusize">
+      <li><a href="">Profile</a></li>
+      <li><a href="">Add Recipe</a></li>
+      <li><a href="">Log Out</a></li>
+      <li><a href="">Log in</a></li>
+      <li><a href="">Register</a></li>
+    </ul>
+  </div>
+</nav>
+<!---------------Mobile Navbar-->
+<ul class="sidenav" id="mobile-demo">
+      <li><a href="">Profile</a></li>
+      <li><a href="">Add Recipe</a></li>
+      <li><a href="">Log Out</a></li>
+      <li><a href="">Log in</a></li>
+      <li><a href="">Register</a></li>
+</ul>
 
 {% block content %}
 {% endblock %}
