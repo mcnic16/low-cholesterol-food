@@ -36,6 +36,17 @@ body {
     }
   }
 
+  .modal-container {
+    background: white;
+    padding: 20px 25px;
+    border: 5px solid #00acc1 ;
+    width: 250px;
+    height: auto;
+    box-sizing: border-box;
+    position: relative;
+    margin-top: 50px ;
+
+  }
 /*---------------------------------------media-queiries-----------------*/
 
 @media screen and (max-width: 1075px) {
