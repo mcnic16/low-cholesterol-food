@@ -3,6 +3,7 @@ from flask import url_for
 from werkzeug.datastructures import ImmutableMultiDict
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask import Flask
+from app import register
 
 app = Flask(__name__)
 
