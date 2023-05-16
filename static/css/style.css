@@ -47,12 +47,20 @@ body {
     margin-top: 20px ;
 
   }
+
   .modal-heading {
     font-size: 2.0rem;
     letter-spacing: 0.1rem; 
     color: var(--coral);
     font-weight: 600;
 }
+
+.card-panel {
+  margin-left: 30px;
+  width: 600px;
+}
+
+
 /*---------------------------------------media-queiries-----------------*/
 
 @media screen and (max-width: 1075px) {
