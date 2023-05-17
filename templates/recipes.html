@@ -1,18 +1,20 @@
 {% extends "base.html" %}
 {% block content %}
 
+{% for recipe in recipes %}
 <div class="modal-container">
-  {% for recipe in recipes %}
+  
+  <li>
     <h3>{{ recipe.name }}</h3>
     <h5 class="modal-heading">Meal Type:</h5>
     <p>{{ recipe.meal_type }}</p>
     <h5 class="modal-heading">Ingredients:</h5>
     <p>{{ recipe.ingredients }}</p>
     <!-- Modal Trigger -->
-    <a class="waves-effect waves-light btn pink darken-1 modal-trigger" href="#demo-modal">Open here</a>
+    <a class="waves-effect waves-light btn pink darken-1 modal-trigger" href="#modal-{{ loop.index }}">Open here</a>
 
     <!-- Modal Structure -->
-    <div id="demo-modal" class="modal">
+    <div id="modal-{{ loop.index }}" class="modal">
       <div class="modal-content">
         <p class="modal-heading">Tools:</p>
         <p>{{ recipe.tools }}</p>
@@ -28,6 +30,8 @@
       <a href="#!" class="modal-action modal-close waves-effect waves-red btn red lighten-1">Close</a>
     </div>
   </div>
+      </li>
+  {% endfor %}
 </div>
-{% endfor %}
+
 {% endblock %}
