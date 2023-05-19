@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
 
+
 <div class="container">
   <div class="row">
 {% for recipe in recipes %}
@@ -15,9 +16,7 @@
     <div id="modal-{{ loop.index }}" class="modal">
       <div class="modal-content">
         <h5 class="modal-heading">Ingredients:</h5>
-        <ul>
         <li>{{ recipe.ingredients }}</li>
-        </ul>
         <p class="modal-heading">Tools:</p>
         <p>{{ recipe.tools }}</p>
         <p class="modal-heading">Directions:</p>
@@ -29,7 +28,9 @@
 
     </div>
     <div class="modal-footer">
-      <a href="#!" class="modal-action modal-close waves-effect waves-red btn red lighten-1">Close</a>
+      <a href="#!" class="modal-action modal-close waves-effect btn cynan lighten-1">Close</a>
+      <a href="" class="modal-close waves-effect waves-green btn cynan lighten-1">Edit</a>
+        <a href="" class="modal-close waves-effect waves-red btn red lighten-1">Delete</a>
     </div>
   </div>
 
