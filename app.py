@@ -131,10 +131,10 @@ def edit_recipe(recipe_id):
             "cooking_time": request.form.get("cooking_time"),
             "servings": request.form.get("servings")
             }
-        mongo.db.recipe.update({"_id": ObjectId(recipe_id)}, edited_recipe)
+        mongo.db.recipes.update({"_id": ObjectId(recipe_id)}, edited_recipe)
         flash("Recipe Successfully Updated")
 
-    recipe = mongo.db.recipe.find_one({"_id": ObjectId(recipe_id)})
+    recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
     return render_template("edit_recipe.html", recipe=recipe)
 
 

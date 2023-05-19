@@ -9,7 +9,8 @@
     <div class="row">
       <div class="input-field col s12">
         <i class="fas fa-pizza-slice fa-spin prefix"></i>
-        <input id="name" name="name" type="text" class="validate" required>
+        <input id="name" name="name" type="text" value="{{- recipe.name -}}" class="validate" required>
+        
         <label for="name">Recipe Name</label>
       </div>
     </div>
@@ -32,7 +33,7 @@
     <div class="input-field col s12">
       <i class="fas fa-clipboard-list prefix"></i>
         <textarea id="ingredients" name="ingredients" class="materialize-textarea validate" 
-        required></textarea>
+        required>{{- recipe.ingredients -}}</textarea>
         <label for="ingredients">Ingredients</label>
     </div>
 </div>
@@ -41,7 +42,7 @@
   <div class="input-field col s12">
     <i class="fas fa-utensils prefix"></i>
       <textarea id="tools" name="tools" class="materialize-textarea validate" 
-      required></textarea>
+      required>{{- recipe.tools -}}</textarea>
       <label for="tools">Tools:</label>
   </div>
 </div>
@@ -50,7 +51,7 @@
   <div class="input-field col s12">
     <i class="fas fa-list-ol prefix"></i>
       <textarea id="directions" name="directions" class="materialize-textarea validate" 
-      required></textarea>
+      required>{{- recipe.directions -}}</textarea>
       <label for="directions">Directions:</label>
   </div>
 </div>
@@ -59,7 +60,7 @@
   <div class="input-field col s12">
     <i class="far fa-clock prefix"></i>
       <textarea id="cooking_time" name="cooking_time" class="materialize-textarea validate" 
-      required></textarea>
+      required>{{- recipe.cooking_time -}}</textarea>
       <label for="cooking_time">Cooking Time:</label>
   </div>
 </div>
@@ -68,14 +69,16 @@
   <div class="input-field col s12">
     <i class="fas fa-concierge-bell prefix"></i>
       <textarea id="servings" name="servings" class="materialize-textarea validate" 
-      required></textarea>
+      required>
+      {{- recipe.servings -}}    
+    </textarea>
       <label for="servings">Servings:</label>
   </div>
 </div>
 <!-------------------Submit button------------->
 <div class="row">
   <div class="col s12 center-align">
-      <button type="submit" class="btn waves-effect text-shadow #b2ebf2 #26c6da cyan darken-1n">
+      <button type="submit" name="action" class="btn waves-effect text-shadow #b2ebf2 #26c6da cyan darken-1n">
           Edit Recipe <i class="fas fa-plus-square right"></i>
       </button>
   </div>

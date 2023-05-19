@@ -108,7 +108,15 @@ validators , pep8 and python testing
 
 
 # Bugs
+I could not get postgres to work , I kept having the error:
 
+psql: error: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory Is the server running locally and accepting connections on that socket?
+
+Everything I tried did not work so I have decided to use MongoDB instead. I also had an error which was:
+
+'Collection' object is not callable. If you meant to call the 'update' method on a 'Collection' object it is failing because no such method exists
+
+This was related to the line mongo.db.starter.update({"_id": ObjectId(starter_id)}, edited_starter) in my edit_starters function in app.py, so I had downgrade pymongo from 4.3.3 to 3.12.3.
 
 # Deployment
 1. Set up environment variables.
