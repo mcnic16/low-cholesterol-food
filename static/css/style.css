@@ -6,10 +6,12 @@ body {
     min-height: 100vh;
     flex-direction: column;
     font-family: 'Playfair Display', serif;
+    overflow-x: hidden;
 }
 
 .brand-logo {
   margin-left: 20px;
+  font-size: 30px;
 }
 
 /* ------text on the navbar----------- */
@@ -80,4 +82,29 @@ body {
     .container {
         margin-left: 30px
     }
+
+
+.nav-wrapper .brand-logo {
+  font-size: 30px;
+}
+.regcontainer {
+  width: 70%;
+  margin-left:60px;
+  height: auto;
+}
+.container {
+  width: 80%;
+  height: 100%;
+  margin-left: 10px;
+}
+.card-panel {
+  margin-left: 35px;
+  width: 80%;
+}
+}
+
+@media screen and (max-width: 900px) {
+  .nav-wrapper .brand-logo {
+    font-size: 16px;
+  }
 }
