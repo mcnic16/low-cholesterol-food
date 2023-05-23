@@ -6,9 +6,10 @@
 [View live project](https://low-cholesterol-food1.herokuapp.com/)
 
 
-<img src="static/img/homescreen.png" width="400px">
+<img src="test/homescreen.png" width="400px">
 
 "Low Chloestrol Recipes" -  Data-Centric  Milestone Project.
+
 
 The purpose of this full-stack MongoDB-based Flask project is to create a database of recipes that allows users to create, read, update and delete (CRUD) low cholesterol recipes. This gives access to all the recipes in the database for registered users. Registered users can add new recipes, edit and delete their own ones, as well as edit their username and password or delete there account.
 
@@ -153,7 +154,27 @@ Notes for this can be added in the directions.
 
 The site is easy to navigate with all links in the navbar. On mobile, the links on the left hand side under menu, and to view the recipes just click on the title Low Cholestrol Food.
 
-validators , pep8 and python testing
+### HTML validator
+[W3C Markup Validator](https://validator.w3.org/)
+All HTML pages passed , The only thing that failed was the jinja.
+
+add_recipe:
+<h2 align="center"><img src="test/add_recipe.png" width="400px"></h2>
+
+edit_recipe:
+<h2 align="center"><img src="test/edit_recipe.png" width="400px"></h2>
+
+base:
+<h2 align="center"><img src="test/base.png" width="400px"></h2>
+
+login:
+<h2 align="center"><img src="test/login.png" width="400px"></h2>
+
+recipes:
+<h2 align="center"><img src="test/recipes.png" width="400px"></h2>
+
+register:
+<h2 align="center"><img src="test/register.png" width="400px"></h2>
 
 
 # Compatibility and Responsiveness

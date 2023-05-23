@@ -5,86 +5,81 @@
 
 <div class="row card-panel grey lighten-4">
   <form class="col s12" method="POST" action="{{ url_for('edit_recipe', recipe_id=recipe._id) }}">
-    <!-------------------Select recipe name------------->
+    <!-------------------Edit recipe name------------->
     <div class="row">
       <div class="input-field col s12">
         <i class="fas fa-pizza-slice fa-spin prefix"></i>
         <input id="name" name="name" type="text" value="{{- recipe.name -}}" class="validate" required>
-        
         <label for="name">Recipe Name</label>
       </div>
     </div>
     <div class="row">
-      <!-------------------Select meal Type------------>
+      <!-------------------Edit meal Type------------>
       <div class="input-field col s12">
         <i class="fas fa-asterisk asterisk prefix"></i>
-        <select id="meal_type" name="meal_type" class="validate" required>
+        <select id="meal_type" name="meal_type" class="validate" required multiple>
           <option value="meal_type" disabled selected>Choose here</option>
           <option value="breakfast">Breafast</option>
           <option value="lunch">Lunch</option>
           <option value="dinner">Dinner</option>
           <option value="dessert">Dessert</option>
         </select>
-          <label for="meal_type">Meal Type</label>
+        <label for="meal_type">Meal Type</label>
       </div>
-  </div>
-  <div class="row">
-    <!-------------------Select Ingredients------------->
-    <div class="input-field col s12">
-      <i class="fas fa-clipboard-list prefix"></i>
-        <textarea id="ingredients" name="ingredients" class="materialize-textarea validate" 
-        required>{{- recipe.ingredients -}}</textarea>
-        <label for="ingredients">Ingredients</label>
     </div>
-</div>
-<div class="row">
-  <!-------------------Select tools------------->
-  <div class="input-field col s12">
-    <i class="fas fa-utensils prefix"></i>
-      <textarea id="tools" name="tools" class="materialize-textarea validate" 
-      required>{{- recipe.tools -}}</textarea>
-      <label for="tools">Tools:</label>
-  </div>
-</div>
-<div class="row">
-  <!-------------------Select directions------------->
-  <div class="input-field col s12">
-    <i class="fas fa-list-ol prefix"></i>
-      <textarea id="directions" name="directions" class="materialize-textarea validate" 
-      required>{{- recipe.directions -}}</textarea>
-      <label for="directions">Directions:</label>
-  </div>
-</div>
-<div class="row">
-  <!-------------------Select cooking time------------->
-  <div class="input-field col s12">
-    <i class="far fa-clock prefix"></i>
-      <textarea id="cooking_time" name="cooking_time" class="materialize-textarea validate" 
-      required>{{- recipe.cooking_time -}}</textarea>
-      <label for="cooking_time">Cooking Time:</label>
-  </div>
-</div>
-<div class="row">
-  <!-------------------Number pf Servings------------->
-  <div class="input-field col s12">
-    <i class="fas fa-concierge-bell prefix"></i>
-      <textarea id="servings" name="servings" class="materialize-textarea validate" 
-      required>
+    <div class="row">
+      <!-------------------Edit Ingredients------------->
+      <div class="input-field col s12">
+        <i class="fas fa-clipboard-list prefix"></i>
+        <textarea id="ingredients" name="ingredients" class="materialize-textarea validate"
+          required>{{- recipe.ingredients -}}</textarea>
+        <label for="ingredients">Ingredients</label>
+      </div>
+    </div>
+    <div class="row">
+      <!-------------------Edit tools------------->
+      <div class="input-field col s12">
+        <i class="fas fa-utensils prefix"></i>
+        <textarea id="tools" name="tools" class="materialize-textarea validate" required>{{- recipe.tools -}}</textarea>
+        <label for="tools">Tools:</label>
+      </div>
+    </div>
+    <div class="row">
+      <!-------------------Edit directions------------->
+      <div class="input-field col s12">
+        <i class="fas fa-list-ol prefix"></i>
+        <textarea id="directions" name="directions" class="materialize-textarea validate"
+          required>{{- recipe.directions -}}</textarea>
+        <label for="directions">Directions:</label>
+      </div>
+    </div>
+    <div class="row">
+      <!-------------------Edit cooking time------------->
+      <div class="input-field col s12">
+        <i class="far fa-clock prefix"></i>
+        <textarea id="cooking_time" name="cooking_time" class="materialize-textarea validate"
+          required>{{- recipe.cooking_time -}}</textarea>
+        <label for="cooking_time">Cooking Time:</label>
+      </div>
+    </div>
+    <div class="row">
+      <!-------------------Number of Servings------------->
+      <div class="input-field col s12">
+        <i class="fas fa-concierge-bell prefix"></i>
+        <textarea id="servings" name="servings" class="materialize-textarea validate" required>
       {{- recipe.servings -}}    
     </textarea>
-      <label for="servings">Servings:</label>
-  </div>
-</div>
-<!-------------------Submit button------------->
-<div class="row">
-  <div class="col s12 center-align">
-      <button type="submit" name="action" class="btn waves-effect text-shadow #b2ebf2 #26c6da cyan darken-1n">
+        <label for="servings">Servings:</label>
+      </div>
+    </div>
+    <!-------------------Submit button------------->
+    <div class="row">
+      <div class="col s12 center-align">
+        <button type="submit" name="action" class="btn waves-effect text-shadow #b2ebf2 #26c6da cyan darken-1n">
           Edit Recipe <i class="fas fa-plus-square right"></i>
-      </button>
-  </div>
+        </button>
+      </div>
+    </div>
+  </form>
 </div>
-</form>
-</div>
-
-
 {% endblock %}
