@@ -26,9 +26,6 @@ This website has a user-friendly interface with easy access to all information. 
 
 # User Stories
 
-
-
-
 As a user, I want:
 
 

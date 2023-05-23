@@ -1,52 +1,61 @@
 import unittest
-from flask import url_for
-from werkzeug.datastructures import ImmutableMultiDict
-from werkzeug.security import generate_password_hash, check_password_hash
-from flask import Flask
-from app import register
+from flask import Flask, request
+from flask_pymongo import PyMongo
+from bson.objectid import ObjectId
 
 app = Flask(__name__)
+app.config['MONGO_URI'] = 'mongodb://localhost:27017/test_db'
+mongo = PyMongo(app)
 
-
-class TestRegistration(unittest.TestCase):
-
+class EditRecipeTestCase(unittest.TestCase):
     def setUp(self):
-        # create test Flask app
-        app.testing = True
+        app.config['TESTING'] = True
+        app.config['DEBUG'] = False
         self.app = app.test_client()
-
+        recipe = {
+            "name": "rice",
+            "meal_type": "curry" ,
+            "ingredients": "lihlih",
+            "tools": "ff",
+            "directions": "frggr",
+            "cooking_time": "5665",
+            "servings": "555",
+            
+        }
+        x = mongo.db.recipes.insert_one(recipe)
+        print(x)
     def tearDown(self):
         pass
 
-    def test_register_success(self):
-        # test successful registration
-        with self.app as c:
-            # simulate POST request with form data
-            form_data = ImmutableMultiDict([
-                ('username', 'testuser'),
-                ('password', 'testpassword'),
-                ('confirm_password', 'testpassword')
-            ])
-            response = c.post('/register', data=form_data, follow_redirects=True)
+    def test_edit_recipe(self):
+        # Assuming the recipe_id exists in the database
+        recipe_id = "646b90d25406a0604343fe04"  
 
-            # check that the user was redirected to the profile page
-            self.assertEqual(response.status_code, 200)
-            self.assertIn(b"Registration Successful!", response.data)
+        # Simulate a POST request with form data
+        form_data = {
+            "name": "New Recipe Name",
+            "meal_type": "Lunch",
+            "ingredients": "Ingredient 1, Ingredient 2",
+            "tools": "Tool 1, Tool 2",
+            "directions": "Step 1, Step 2",
+            "cooking_time": "30 minutes",
+            "servings": "2"
+        }
+        response = self.app.post(f"/edit_recipe/{recipe_id}", data=form_data)
 
-    def test_register_username_exists(self):
-        # test registration with existing username
-        with self.app as c:
-            # simulate POST request with form data
-            form_data = ImmutableMultiDict([
-                ('username', 'existinguser'),
-                ('password', 'testpassword'),
-                ('confirm_password', 'testpassword')
-            ])
-            response = c.post('/register', data=form_data, follow_redirects=True)
+        # Assert that the response has a successful status code (e.g., 200)
+        self.assertEqual(response.status_code, 200)
 
-            # check that the user was redirected back to the registration page
-            self.assertEqual(response.status_code, 200)
-            self.assertIn(b"Username already exists", response.data)
+        # Assert that the recipe in the database has been updated
+        updated_recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
+        self.assertEqual(updated_recipe['name'], "New Recipe Name")
+        self.assertEqual(updated_recipe['meal_type'], "Lunch")
+        self.assertEqual(updated_recipe['ingredients'], "Ingredient 1, Ingredient 2")
+        self.assertEqual(updated_recipe['tools'], "Tool 1, Tool 2")
+        self.assertEqual(updated_recipe['directions'], "Step 1, Step 2")
+        self.assertEqual(updated_recipe['cooking_time'], "30 minutes")
+        self.assertEqual(updated_recipe['servings'], "2")
+
 
 if __name__ == '__main__':
     unittest.main()

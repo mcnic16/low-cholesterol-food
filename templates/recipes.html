@@ -26,15 +26,13 @@
         <p>{{ recipe.cooking_time }}</p>
         <p class="modal-heading">Servings:</p>
         <p>{{ recipe.servings }}</p>
-
     </div>
     <div class="modal-footer">
       <a href="#!" class="modal-action modal-close waves-effect btn cynan lighten-1">Close</a>
-      {% if session.user|lower == recipe.created_by|lower %}
+      {% if session.user|lower == recipe.created_by|lower and session.user!= "" %}
       <a href="{{ url_for('edit_recipe', recipe_id=recipe._id) }}" class="modal-close waves-effect waves-green btn cynan lighten-1">Edit</a>
       <a href="{{ url_for('delete_recipe', recipe_id=recipe._id) }}" class="modal-close waves-effect waves-red btn red lighten-1">Delete</a>
       {% endif %}
-      
       </div>
   </div>
 
