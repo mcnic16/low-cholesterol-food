@@ -3,22 +3,16 @@
 <h1 align="center">Low Cholesterol Recipes</h1>
 
 
-[View live project]()
+[View live project](https://low-cholesterol-food1.herokuapp.com/)
 
 
-add screenshots here of full site on tablet, mobile and pc.
-
-
-
+<img src="static/img/homescreen.png" width="400px">
 
 "Low Chloestrol Recipes" -  Data-Centric  Milestone Project.
 
-
 The purpose of this full-stack MongoDB-based Flask project is to create a database of recipes that allows users to create, read, update and delete (CRUD) low cholesterol recipes. This gives access to all the recipes in the database for registered users. Registered users can add new recipes, edit and delete their own ones, as well as edit their username and password or delete there account.
 
-
 # UX
-
 
 My main goal in UX was to build a simple to use website where users can create their own recipes, view all the recipes, edit and delete their recipes. The target audience for this app is anyone who is looking for low cholesterol food.
 This website has a user-friendly interface with easy access to all information. This app has been developed so registered users can easily add, delete and edit there own recipes with there own personal database.
@@ -28,76 +22,109 @@ This website has a user-friendly interface with easy access to all information. 
 
 As a user, I want:
 
-
 1 .to view all recipe details which includes the name of the dish, meal, cooking time, servings, list of  ingredients and directions
 
-
 2. to create my own account
-
 
 3. to add new recipes
 
 
 4. to edit and delete recipes on my account and all the recipes I've created
 
-
 5. to view a list of my recipes on a separate page and see how many recipes I've created
 
 
 6. to change my username and password
 
-
 7. to delete my account and all recipes I've created
-
 
 8. to have the ability to use the site on all modern browsers
 
-
 9. to use the site on tablet , mobile or pc.
-
 
 10. I want to be able to add in notes to each dish so I can add my own thoughts, experiences or
 things I want to remember about cooking the dish.
-
 
 11. I want the site to be easy navigate
 
 
 # Design
-
+The goal was to create a website that is overall user friendly, and providing information with the ability to create, read and delete the recipes. Therefore, following design choices were made:
 
 ## Framework
-Bootsrap
-
+I chose Materialize for the front-end framework for this project.
+JQuery was used for initializing some Materialize elements.
 
 ## Colour Scheme
-The colour for the navbar is Cyan.
+The colour for the navbar is Cyan with the text being white with a slight text shadow.
+The modals have an aqua colour, but when they are opened they have a white background.
 
 ## Typography
 The font used is Playfair Display, serif
 
 ## Icons
-
+I used FontAwesome as the main icon library across the project 
 
 ## Wireframes
 
 
 ## Features
 
+The Navbar is not fixed, when you enter the website there 2 options , to login and register.
+Once registered and logged in, there is a option to add a new recipe.
+To view the recipes just click on the title Low Chloesterol food to view the recipes and within the recipe itself there is an option to edit and delete the recipe.In mobile, the links will display in a menu on the left hand side.
 
 # Technologies Used
 
+GitPod - an online IDE for developing this project.
+Git - for version control.
+GitHub - for remotely storing project's code.
+PIP - for installation of necessary tools.
+Am I Responsive - checking responsiveness.
 
 ## Front-End
 
+HTML - to build the foundation of the project.
+CSS - to create custom styles.
 
 ## Back-End
+
+Python 3.8.2 - back-end programming language used in this project.
+Flask 2.3.2 - microframework for building and rendering pages.
+MongoDB - database for storing back-end data.
+PyMongo 3.12.3 - for Python to get access the MongoDB database.
 
 
 ## Libraries
 
+Materialize 1.0.0 - for front front-end framework.
+FontAwesome - to provide icons used across the project.
 
 ## Testing
+User stories testing
+1 .to view all recipe details which includes the name of the dish, meal, cooking time, servings, list of ingredients and directions
+
+2. to create my own account
+
+3. to add new recipes
+
+4. to edit and delete recipes on my account and all the recipes I've created
+
+5. to view a list of my recipes on a separate page and see how many recipes I've created
+
+6. to change my username and password
+
+7. to delete my account and all recipes I've created
+
+8. to have the ability to use the site on all modern browsers
+
+9. to use the site on tablet , mobile or pc.
+
+10. I want to be able to add in notes to each dish so I can add my own thoughts, experiences or
+things I want to remember about cooking the dish.
+
+11. I want the site to be easy navigate
+
 validators , pep8 and python testing
 
 
