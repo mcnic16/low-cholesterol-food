@@ -5,13 +5,16 @@
 <div class="container">
   <div class="row">
     {% for recipe in recipes %}
-    <div class="col s12 m5 l4 offset-m1 offset-l1 modal-container">
-      <h3>{{ recipe.name }}</h3>
-      <h5 class="modal-heading">Meal Type:</h5>
-      <p>{{ recipe.meal_type }}</p>
-
-
-      <a class="waves-effect waves-light btn pink darken-1 modal-trigger" href="#modal-{{ loop.index }}">Open here</a>
+      <div class="col s12 m4 l3 offset-m1 offset-l1 modal-container" style="display: grid;">
+        <div class="modtext">
+          <h4>{{ recipe.name }}</h4>
+          <h5 class="modal-heading">Meal Type:</h5>
+          <p>{{ recipe.meal_type }}</p>
+        </div>
+      <div class="modal-button" style="display: contents";>
+        <a class="waves-effect waves-light btn pink darken-1 modal-trigger modalbut" href="#modal-{{ loop.index }}">Open here</a>
+      </div>
+    
     </div>
     <!-- Modal Structure -->
     <div id="modal-{{ loop.index }}" class="modal">
@@ -28,6 +31,8 @@
         <p>{{ recipe.servings }}</p>
       </div>
       <div class="modal-footer">
+        Session: {{session.user}}
+        Created By: {{recipe.created_by}}
         <a href="#!" class="modal-action modal-close waves-effect btn cynan lighten-1">Close</a>
         {% if session.user|lower == recipe.created_by|lower and session.user!= "" %}
         <a href="{{ url_for('edit_recipe', recipe_id=recipe._id) }}"

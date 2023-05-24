@@ -194,6 +194,11 @@ I then emailed student support about this and they have confirmed that I don't n
 
 # Compatibility and Responsiveness
 
+This website had been being tested during the development across multiple browsers (Chrome, Safary, Opera, FireFox and Edge) and on multiple devices: mobile  (Samsung Galaxy() tablets(iPad, iPadPro) and laptops (with HiDPI and MDPI and touch screens).
+As well as on Google Chrome's developer tools to see how it looks across all the different device screen sizes to ensure compatibility and responsiveness.
+I also used Am I Responsive online tool for checking responsiveness on different devices.
+Plenty of changes were made and necessary media queries added to make the website fully responsive.
+The one issue was found that website renders poorly on Internet Explorer browser (as it is outdated). However, the website renders well as expected on the other browsers.
 
 # Bugs
 I could not get postgres to work , I kept having the error:
@@ -205,6 +210,8 @@ Everything I tried did not work so I have decided to use MongoDB instead. I also
 'Collection' object is not callable. If you meant to call the 'update' method on a 'Collection' object it is failing because no such method exists
 
 This was related to the line mongo.db.starter.update({"_id": ObjectId(starter_id)}, edited_starter) in my edit_starters function in app.py, so I had downgrade pymongo from 4.3.3 to 3.12.3.
+
+I also encountered a problem where after I have added my recipe, I then go to edit my recipe, but after I have edited my recipe the edit and delete buttons dissapear but I solved this by showing the username in the modal.
 
 # Deployment
 1. Set up environment variables.
