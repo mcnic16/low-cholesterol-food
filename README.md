@@ -109,7 +109,8 @@ FontAwesome - to provide icons used across the project.
 User stories testing:
 
 
-1 .To view all recipe details which includes the name of the dish, meal, cooking time, servings, list of ingredients and directions.
+1 .To view all recipe details which includes the name of the dish, meal, 
+   cooking time, servings, list of ingredients and directions.
 
 All recipes can be viewed without being logged in. You can view the dish, cooking time, servings, ingredients and directions within the modal. The first window will show the name and type of meal, then press open here to view the rest of the list.
 
@@ -120,10 +121,10 @@ I created a few test accounts to test this functionality. Clicking on the "Regis
 3. To add new recipes
 
 I added plenty of test recipes to check the functionality and if I leave some of the required fields empty, I will not be able to submit the form. I can see the flash messages displayed if my input does not meet length requirement. 
-.
-4. to edit and delete recipes on my account and all the recipes I've created
 
-If I am the author of selected recipe, I can see the buttons "Edit" and "Delete" in the recipe modals, and I can only delete and edit the recipes of said author.
+4. To edit and delete recipes on my account and all the recipes I've created
+
+- If I am the author of selected recipe, I can see the buttons "Edit" and "Delete" in the recipe - - modals, and I can only delete and edit the recipes of said author.
 
 5. To view a list of my recipes on a separate page and see how many recipes I've created
 
@@ -131,11 +132,11 @@ All the recipes are shown when you click on the Low Chloesterol Recipe title, at
 
 6. to change my username and password
 
-This will be added at a later date
+This will be added at a later date due to time constraints.
 
 7. to delete my account and all recipes I've created
 
-This will be added at a later date
+This will be a later date due to time constraints.
 
 8. to have the ability to use the site on all modern browsers
 
@@ -187,6 +188,7 @@ register:
 The fails I had with the PEP8 validator was that it wanted me to leave 2 blank lines between the app.route() and the def funnction and also I had to leave out the imports because it would not test with them in.
 
 ### Functionality/Unit Testing
+
 On my previous attempt at this project it failed on this testing.
 I have wrote a test which is in test.py, but I could not get it to connect to MongoDB.
 I got in touch with tutor support who informed me that they won't be able to provide support for testing an application that uses mongodb, as it is not covered in the course materials.
@@ -194,11 +196,10 @@ I then emailed student support about this and they have confirmed that I don't n
 
 # Compatibility and Responsiveness
 
-This website had been being tested during the development across multiple browsers (Chrome, Safary, Opera, FireFox and Edge) and on multiple devices: mobile  (Samsung Galaxy() tablets(iPad, iPadPro) and laptops (with HiDPI and MDPI and touch screens).
+This website had been being tested during the development across multiple browsers (Chrome, Safary, Opera, FireFox and Edge) and on multiple devices: mobile Samsung Galaxy, tablets and laptops and desktop PC.
 As well as on Google Chrome's developer tools to see how it looks across all the different device screen sizes to ensure compatibility and responsiveness.
 I also used Am I Responsive online tool for checking responsiveness on different devices.
 Plenty of changes were made and necessary media queries added to make the website fully responsive.
-The one issue was found that website renders poorly on Internet Explorer browser (as it is outdated). However, the website renders well as expected on the other browsers.
 
 # Bugs
 I could not get postgres to work , I kept having the error:
@@ -254,11 +255,6 @@ These are the same that are in the env file.
 
 9.The app will be deployed and ready to run. Click "Open App" to view the app.
 
-
-
-
-
-
-
-
 # Credits
+
+I would like to thank my my mentor , tutor and student support for there help.
