@@ -176,6 +176,9 @@ recipes:
 register:
 <h2 align="center"><img src="test/register.png" width="400px"></h2>
 
+CSS:
+<h2 align="center"><img src="test/css.png" width="400px"></h2>
+
 
 # Compatibility and Responsiveness
 
