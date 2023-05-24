@@ -176,9 +176,21 @@ recipes:
 register:
 <h2 align="center"><img src="test/register.png" width="400px"></h2>
 
-CSS:
+### CSS validator
+[W3C Markup Validator](https://jigsaw.w3.org/css-validator/)
 <h2 align="center"><img src="test/css.png" width="400px"></h2>
 
+### PEP8 validator
+[W3C Markup Validator](https://www.pythonchecker.com/)
+<h2 align="center"><img src="test/pep8.png" width="400px"></h2>
+
+The fails I had with the PEP8 validator was that it wanted me to leave 2 blank lines between the app.route() and the def funnction and also I had to leave out the imports because it would not test with them in.
+
+### Functionality/Unit Testing
+On my previous attempt at this project it failed on this testing.
+I have wrote a test which is in test.py, but I could not get it to connect to MongoDB.
+I got in touch with tutor support who informed me that they won't be able to provide support for testing an application that uses mongodb, as it is not covered in the course materials.
+I then emailed student support about this and they have confirmed that I don't need to worry about it.
 
 # Compatibility and Responsiveness
 

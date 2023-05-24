@@ -19,11 +19,12 @@ app.secret_key = os.environ.get("SECRET_KEY")
 
 mongo = PyMongo(app)
 
-@app.route("/")
-@app.route("/get_recipes")
+
+@app.route("/") 
+@app.route("/get_recipes") 
 def get_recipes():
     recipes = mongo.db.recipes.find()
-    return render_template("recipes.html", recipes=recipes)
+    return render_template("recipes.html", recipes=recipes) 
 
 
 @app.route("/register", methods=["GET", "POST"])
@@ -40,23 +41,23 @@ def register():
         register = {
             "username": request.form.get("username").lower(),
             "password": generate_password_hash(request.form.get("password"))
-        }
+    }
         mongo.db.users.insert_one(register)
 
         # put the new user into 'session' cookie
-        session["user"] = request.form.get("username").lower()
-        flash("Registration Successful!")
-        return redirect(url_for("profile", username=session["user"]))
+        session["user"] = request.form.get("username").lower() 
+        flash("Registration Successful!") 
+        return redirect(url_for("profile", username=session["user"])) 
 
     return render_template("register.html")
     
 
-@app.route("/login", methods=["GET", "POST"])
+@app.route("/login", methods=["GET", "POST"]) 
 def login():
     if request.method == "POST":
         # check if username exists in db
         existing_user = mongo.db.users.find_one(
-            {"username": request.form.get("username").lower()})
+            {"username": request.form.get("username").lower()}) 
 
         if existing_user:
             # ensure hashed password matches user input
@@ -131,7 +132,7 @@ def edit_recipe(recipe_id):
             "directions": request.form.get("directions"),
             "cooking_time": request.form.get("cooking_time"),
             "servings": request.form.get("servings")
-            }
+        }
         mongo.db.recipes.update({"_id": ObjectId(recipe_id)}, edited_recipe)
         flash("Recipe Successfully Updated")
 
